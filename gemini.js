@@ -7,7 +7,7 @@ const geminiApiKeys = process.env.GEMINI_API_KEYS.split(',');
 // For text-only input, use the gemini-pro model
 async function runGeminiPro (prompt,index) {
   // Access your API key as an environment variable (see "Set up your API key" above)
-  const genAI = new GoogleGenerativeAI(geminiApiKeys[index]);
+  const genAI = new GoogleGenerativeAI(geminiApiKeys);
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   const result = await model.generateContent(prompt);
